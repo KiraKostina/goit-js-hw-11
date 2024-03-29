@@ -1,6 +1,7 @@
 // Функції для відображення елементів інтерфейсу
 
 export function createMarkup(arr) {
+
   return arr
     .map(
       item =>
