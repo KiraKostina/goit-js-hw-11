@@ -39,19 +39,16 @@ const opts = {
   position: 'absolute', // Element positioning
 };
 const spiner = new Spinner(opts);
-// let page = 1;
 let searchQuery = '';
 
 function handleSubmit(e) {
   e.preventDefault();
   spinerPlay();
   list.innerHTML = '';
-//   page = 1;
   searchQuery = e.target['user-search-query'].value.trim();
     getPhotos(searchQuery)
         .then(res => {
             if (res.hits.length === 0) {
-                // loadMorebtn.classList.add('is-hidden');
                 return iziToast.error({
                     message:
                         'Sorry, there are no images matching your search query. Please try again!',
@@ -62,13 +59,6 @@ function handleSubmit(e) {
             list.innerHTML = createMarkup(res.hits);
             lightbox.refresh();
         })
-     
-           
-      
-    // //   if (res.total > 12) {
-    // //     loadMorebtn.classList.remove('is-hidden');
-    // //   }
-    // })
     .catch(error => {
       console.log(error);
     })
