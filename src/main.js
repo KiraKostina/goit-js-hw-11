@@ -55,7 +55,6 @@ function handleSubmit(e) {
                     position: 'topRight',
                 });
             }
-            lightbox.refresh();
             list.innerHTML = createMarkup(res.hits);
             lightbox.refresh();
         })
